@@ -1,7 +1,4 @@
-package com.tw.questionEasy;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.tw.questioneasy;
 
 public class HtmlEscaper {
     // TODO:

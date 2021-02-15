@@ -1,4 +1,4 @@
-package com.tw.questionEasy;
+package com.tw.questioneasy;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,6 +1,6 @@
-package com.tw.questionAnotherMedium;
+package com.tw.questionanothermedium;
 
-import java.util.*;
+import java.util.List;
 
 public class Intersection {
     /**

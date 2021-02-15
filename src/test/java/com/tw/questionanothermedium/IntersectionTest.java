@@ -1,11 +1,11 @@
-package com.tw.questionAnotherMedium;
+package com.tw.questionanothermedium;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.tw.questionAnotherMedium.IntersectionTestUtil.countAppearance;
+import static com.tw.questionanothermedium.IntersectionTestUtil.countAppearance;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IntersectionTest {

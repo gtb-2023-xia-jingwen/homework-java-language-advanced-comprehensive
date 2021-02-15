@@ -1,4 +1,4 @@
-package com.tw.questionMedium;
+package com.tw.questionmedium;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
