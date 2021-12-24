@@ -1,13 +1,11 @@
 plugins {
     id 'java'
-    id "jacoco"
-    id "org.sonarqube" version "3.0"
 }
 
 group 'com.tw'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
+sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     maven { url 'https://maven.aliyun.com/repository/public' }
@@ -15,30 +13,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.8.2'
 }
 
 test {
     useJUnitPlatform()
 }
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        xml.enabled true
-    }
-}
-
-sonarqube {
-    properties {
-        System.properties.'sonar.host.url' = System.properties.'gtb.sonar.host.url'
-        System.properties.'sonar.login' = System.properties.'gtb.sonar.login'
-        def studentTerm = System.properties.'gtb.sonar.student.term'
-        def studentName = System.properties.'gtb.sonar.student.name'
-        property "sonar.projectKey", "${studentName}:${studentTerm}:${project.name}"
-    }
-}
-
-project.tasks["sonarqube"].dependsOn "jacocoTestReport"
