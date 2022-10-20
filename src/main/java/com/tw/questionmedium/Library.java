@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Library {
     private final List<Book> books = new ArrayList<>();
@@ -23,7 +25,8 @@ public class Library {
         // TODO:
         //   Please implement the method
         // <-start-
-        throw new RuntimeException("Delete me");
+        Stream<Book> bookStream = books.stream().filter(predicate);
+        return bookStream.sorted((a, b) -> b.getPrice() - a.getPrice()).collect(Collectors.toList());
         // --end-->
     }
 
@@ -37,7 +40,7 @@ public class Library {
         // TODO:
         //   Please complete the method
         // <-start-
-        Predicate<Book> isPriceLowerThanOrEqualTo = null;
+        Predicate<Book> isPriceLowerThanOrEqualTo = book -> book.getPrice() <= maxPriceInclusive;
         // --end-->
 
         // You cannot change this line.
