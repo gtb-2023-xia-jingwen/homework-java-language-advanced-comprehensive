@@ -41,7 +41,19 @@ public class Book {
     // TODO:
     //   You can add additional codes here if you want.
     // <-start-
+    public boolean containTag(String specifiedTag) {
+        for (String tag : tags) {
+            if (tag.equals(specifiedTag)) return true;
+        }
+        return false;
+    }
 
+    public boolean containTag(String ... specifiedTags) {
+        for (String st : specifiedTags) {
+            if (containTag(st)) return true;
+        }
+        return false;
+    }
     // --end-->
 
 }
