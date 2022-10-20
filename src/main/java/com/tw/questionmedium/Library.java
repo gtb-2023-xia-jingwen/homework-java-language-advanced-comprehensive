@@ -58,7 +58,8 @@ public class Library {
         // TODO:
         //   Please implement the method. You **MUST** use `findBooksBy` method
         // <-start-
-        throw new RuntimeException("Delete me");
+        Predicate<Book> withSpecifiedTags = book -> book.containTag(tags);
+        return findBooksBy(withSpecifiedTags);
         // --end-->
     }
 
