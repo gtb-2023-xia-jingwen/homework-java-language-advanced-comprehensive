@@ -25,7 +25,13 @@ public class HtmlEscaper {
         // TODO:
         //   Please implement the method
         // <-start-
-        throw new RuntimeException("Delete me");
+        if (text == null) return null;
+        String escapedStr = text.replaceAll("&", "&amp;")
+                .replaceAll("\"", "&quot;")
+                .replaceAll("\'", "&#39;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;");
+        return escapedStr;
         // --end-->
     }
 }
