@@ -28,7 +28,7 @@ public class HtmlEscaper {
         if (text == null) return null;
         String escapedStr = text.replaceAll("&", "&amp;")
                 .replaceAll("\"", "&quot;")
-                .replaceAll("\'", "&#39;")
+                .replaceAll("'", "&#39;")
                 .replaceAll("<", "&lt;")
                 .replaceAll(">", "&gt;");
         return escapedStr;
